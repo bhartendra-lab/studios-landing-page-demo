@@ -1,0 +1,125 @@
+.grid {
+  columns: 3;
+  column-gap: 14px;
+}
+
+/* ---------- Cell shell (handles the reveal animation) ---------- */
+
+.cell {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 14px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--color-line);
+  cursor: zoom-in;
+
+  /* Start hidden; become visible via IntersectionObserver */
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition:
+    opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 55ms);
+}
+
+.cell[data-visible] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Vary aspect ratios for visual rhythm */
+.cell {
+  aspect-ratio: 3 / 4;
+}
+
+.cell:nth-child(5n) {
+  aspect-ratio: 4 / 3;
+}
+
+.cell:nth-child(7n) {
+  aspect-ratio: 1 / 1;
+}
+
+.cell:nth-child(9n) {
+  aspect-ratio: 3 / 2;
+}
+
+/* ---------- Inner image wrapper ---------- */
+
+.cellInner {
+  position: absolute;
+  inset: 0;
+  transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cell:hover .cellInner {
+  transform: scale(1.06);
+}
+
+.cellInner :global(img) {
+  transition: filter 0.5s ease;
+  filter: saturate(0.9) brightness(0.97);
+}
+
+.cell:hover .cellInner :global(img) {
+  filter: saturate(1.08) brightness(1);
+}
+
+/* ---------- Hover overlay ---------- */
+
+.cellOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.22) 0%,
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.cell:hover .cellOverlay {
+  opacity: 1;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    columns: 1;
+    column-gap: 0;
+  }
+
+  .cell {
+    aspect-ratio: 4 / 5;
+    margin-bottom: 10px;
+  }
+
+  .cell:nth-child(5n),
+  .cell:nth-child(7n),
+  .cell:nth-child(9n) {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .cell {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .cellInner {
+    transition: none;
+  }
+}

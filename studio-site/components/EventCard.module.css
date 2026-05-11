@@ -1,0 +1,148 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-line);
+  border-radius: 2px;
+}
+
+.imageWrap :global(img) {
+  transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: saturate(0.95);
+}
+
+.card:hover .imageWrap :global(img) {
+  transform: scale(1.05);
+  filter: saturate(1.05);
+}
+
+.indexBadge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.viewHint {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px 9px 18px;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .viewHint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.topInfo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.name {
+  font-family: var(--font-heading), serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-primary);
+}
+
+.location {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.venue,
+.date,
+.count {
+  white-space: nowrap;
+}
+
+.dot {
+  color: var(--color-faint);
+}
+
+.count {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 1.35rem;
+  }
+
+  .info {
+    padding: 0;
+    padding-top: 4px;
+  }
+
+  /* hide the view hint on touch where hover doesn't exist */
+  .viewHint {
+    display: none;
+  }
+}

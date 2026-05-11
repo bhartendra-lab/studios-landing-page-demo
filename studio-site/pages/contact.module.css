@@ -1,0 +1,237 @@
+.main {
+  padding-top: 60px;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(40px, 6vh, 72px) var(--gutter) clamp(56px, 8vh, 80px);
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: clamp(32px, 5vh, 48px);
+  max-width: 800px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.eyebrowMark {
+  width: 24px;
+  height: 1px;
+  background: var(--color-primary);
+}
+
+.h1 {
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+}
+
+.h1 em {
+  font-family: var(--font-heading), serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-weight: 300;
+  color: var(--color-muted);
+  max-width: 50ch;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left info */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 80px;
+}
+
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactList li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.contactList li:last-child {
+  border-bottom: none;
+}
+
+.contactLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+.contactValue {
+  font-family: var(--font-heading), serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+a.contactValue:hover {
+  color: var(--color-accent);
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  padding: 14px 24px 14px 22px;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  transition: background 0.25s ease;
+}
+
+.whatsappBtn:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+.socialBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-line);
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social a {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.social a:hover {
+  border-color: var(--color-primary);
+}
+
+/* Right form */
+.formWrap {
+  position: relative;
+}
+
+.formCard {
+  background: var(--color-surface);
+  padding: clamp(24px, 3.5vw, 40px);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 var(--color-line);
+}
+
+.formHeading {
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.formHeading em {
+  font-family: var(--font-heading), serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .info {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+
+  .pageHeader {
+    margin-bottom: 28px;
+  }
+
+  .h1 {
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+  }
+
+  .contactList {
+    gap: 12px;
+  }
+
+  .contactList li {
+    padding-bottom: 10px;
+  }
+
+  .contactValue {
+    font-size: 0.95rem;
+  }
+
+  .formCard {
+    padding: 20px 16px;
+    border-radius: 2px;
+  }
+}
