@@ -1,5 +1,5 @@
 const MOCK_CONFIG = {
-  studioName: 'Bhanu Jain Productions',
+  studioName: 'Anubhav Studio',
   tagline: 'Capturing the soul of your most cherished celebrations',
   city: 'Gwalior',
   locationsServed: [
@@ -9,13 +9,13 @@ const MOCK_CONFIG = {
   ],
   contact: {
     phone: '+91 94256 78901',
-    email: 'hello@bhanujainproductions.in',
+    email: 'hello@anubhavstudio.in',
     address: '42, Lashkar, Gwalior, Madhya Pradesh — 474001',
     whatsapp: '919425678901',
   },
   about: {
     description:
-      'Bhanu Jain Productions has been telling love stories through light and frame since 2011. Based in the historic city of Gwalior, we travel across Madhya Pradesh and beyond — from the ghats of Orchha to the grand courtyards of Agra — to document weddings that feel as alive in photographs as they do in memory. Our team blends candid photojournalism with timeless portraiture, ensuring every frame reflects the genuine emotion of your day. We believe that great wedding photography is not about perfection — it is about truth, warmth, and the fleeting moments that make a celebration uniquely yours.',
+      'Anubhav Studio has been telling love stories through light and frame since 2011. Based in the historic city of Gwalior, we travel across Madhya Pradesh and beyond — from the ghats of Orchha to the grand courtyards of Agra — to document weddings that feel as alive in photographs as they do in memory. Our team blends candid photojournalism with timeless portraiture, ensuring every frame reflects the genuine emotion of your day. We believe that great wedding photography is not about perfection — it is about truth, warmth, and the fleeting moments that make a celebration uniquely yours.',
     founded: '2011',
     team: [
       { name: 'Arjun Sharma', role: 'Lead Photographer', photoUrl: '' },
@@ -28,7 +28,7 @@ const MOCK_CONFIG = {
     {
       clientName: 'Ananya & Rohan Gupta',
       location: 'Orchha',
-      text: 'Arjun and his team captured every small detail of our Orchha wedding that we would have otherwise missed. The candid shots of our family are priceless. We cannot recommend Bhanu Jain Productions enough.',
+      text: 'Arjun and his team captured every small detail of our Orchha wedding that we would have otherwise missed. The candid shots of our family are priceless. We cannot recommend Anubhav Studio enough.',
       rating: 5,
     },
     {
@@ -40,14 +40,14 @@ const MOCK_CONFIG = {
     {
       clientName: 'Divya & Akash Yadav',
       location: 'Jhansi',
-      text: 'We had a large two-day wedding in Jhansi and the Bhanu Jain Productions team handled everything with such professionalism. The album is something we will treasure for generations.',
+      text: 'We had a large two-day wedding in Jhansi and the Anubhav Studio team handled everything with such professionalism. The album is something we will treasure for generations.',
       rating: 5,
     }
   ],
   googleRating: {
     score: 4.9,
     count: 134,
-    url: 'https://g.co/kgs/bhanujainproductions',
+    url: 'https://g.co/kgs/anubhavstudio',
   },
   theme: {
     primaryColor: '#111111',
@@ -56,9 +56,9 @@ const MOCK_CONFIG = {
     fontBody: 'sans-serif',
   },
   socialLinks: {
-    instagram: 'https://www.instagram.com/bhanujainproductions',
-    facebook: 'https://www.facebook.com/bhanujainproductions',
-    youtube: 'https://www.youtube.com/@bhanujainproductions',
+    instagram: 'https://www.instagram.com/anubhavstudio',
+    facebook: 'https://www.facebook.com/anubhavstudio',
+    youtube: 'https://www.youtube.com/@anubhavstudio',
   },
 };
 
