@@ -1,7 +1,7 @@
 const MOCK_CONFIG = {
   studioName: 'Studio Photolius',
   tagline: 'Capturing the soul of your most cherished celebrations',
-  city: 'Gwalior',
+  city: 'Delhi',
   locationsServed: [
     { venueName: 'Neemrana Fort Palace', city: 'Neemrana', state: 'Rajasthan' },
     { venueName: 'Orchha Palace Resort', city: 'Orchha', state: 'Madhya Pradesh' },
@@ -10,7 +10,7 @@ const MOCK_CONFIG = {
   contact: {
     phone: '+91 94256 78901',
     email: 'hello@studiophotolius.in',
-    address: '42, Lashkar, Gwalior, Madhya Pradesh — 474001',
+    address: '42, Lashkar, Delhi, Delhi — 110001',
     whatsapp: '919425678901',
   },
   about: {
